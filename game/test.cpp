@@ -1,5 +1,6 @@
 #include "body.hpp"
 #include "direction.hpp"
+#include "field.hpp"
 #include "swap_body.hpp"
 #include "test_runner.hpp"
 
@@ -147,10 +148,42 @@ void test_head_tail() {
     ASSERT_EQUAL(body.tail(), tail);
 }
 
+void test_field_assign() {
+    Coordinate _0{0, 0}, _1{1, 1}, _2{2, 2}, _3{3, 3};
+    Field field(4, 4);
+
+    ASSERT(field[_0] == false);
+    ASSERT(field[_1] == false);
+    ASSERT(field[_2] == false);
+    ASSERT(field[_3] == false);
+
+    field[_0] = true;
+    field[_1] = true;
+    field[_2] = true;
+    field[_3] = true;
+
+    ASSERT(field[_0]);
+    ASSERT(field[_1]);
+    ASSERT(field[_2]);
+    ASSERT(field[_3]);
+
+    field[_0] = false;
+    field[_1] = false;
+    field[_2] = false;
+    field[_3] = false;
+
+    ASSERT(field[_0] == false);
+    ASSERT(field[_1] == false);
+    ASSERT(field[_2] == false);
+    ASSERT(field[_3] == false);
+}
+
 void tests() {
     TestRunner tr(false);
+
     RUN_TEST(tr, test_direction);
     RUN_TEST(tr, test_swap_direction);
     RUN_TEST(tr, test_swap);
     RUN_TEST(tr, test_head_tail);
+    RUN_TEST(tr, test_field_assign);
 }
