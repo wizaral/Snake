@@ -1,7 +1,11 @@
 #include "body.hpp"
 
-Direction Body::direction() const {
-    return direction_;
+Direction Body::head_direction() const {
+    return head_direction_;
+}
+
+Direction Body::tail_direction() const {
+    return tail_direction_;
 }
 
 const std::deque<Coordinate> &Body::body() const {
@@ -19,20 +23,25 @@ Coordinate Body::tail() const {
 void Body::step() {
     grow();
     body_.pop_back(); // no size check
+    tail_direction_ = tail(body_);
 }
 
 void Body::grow() {
-    body_.push_front(body_.front() + vectors[static_cast<int>(direction_)]);
+    body_.push_front(body_.front() + vectors[static_cast<int>(head_direction_)]);
 }
 
 void Body::turn(Direction direction) {
-    direction_ = direction;
+    head_direction_ = direction;
 }
 
 void Body::ultimate() {}
 
 Direction Body::head(const std::deque<Coordinate> &body) {
     return direction(body[0] - body[1]);
+}
+
+Direction Body::tail(const std::deque<Coordinate> &body) {
+    return direction(body.back() - *++body.rbegin());
 }
 
 Direction Body::direction(const Coordinate &c) {

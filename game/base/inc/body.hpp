@@ -7,7 +7,7 @@
 class Body {
 protected:
     std::deque<Coordinate> body_;
-    Direction direction_;
+    Direction head_direction_, tail_direction_;
 
 public:
     virtual ~Body() = default;
@@ -15,9 +15,11 @@ public:
     template <class It>
     Body(It first, It last)
         : body_(first, last)
-        , direction_(head(body_)) {}
+        , head_direction_(head(body_))
+        , tail_direction_(tail(body_)) {}
 
-    Direction direction() const;
+    Direction head_direction() const;
+    Direction tail_direction() const;
     const std::deque<Coordinate> &body() const;
 
     virtual Coordinate head() const;
@@ -30,6 +32,7 @@ public:
 
 protected:
     static Direction head(const std::deque<Coordinate> &body);
+    static Direction tail(const std::deque<Coordinate> &body);
     static Direction direction(const Coordinate &c);
 
     inline static constexpr std::array<Coordinate, 4> vectors{

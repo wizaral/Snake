@@ -22,8 +22,6 @@ public:
     void ultimate() override;
 
 protected:
-    static Direction tail(const std::deque<Coordinate> &body);
-
     inline static constexpr std::array<void (std::deque<Coordinate>::*)(Coordinate &&), 2> pushes{
         &std::deque<Coordinate>::push_front,
         &std::deque<Coordinate>::push_back,
@@ -38,6 +36,6 @@ protected:
     };
     inline static constexpr std::array<Direction (*)(const std::deque<Coordinate> &), 2> directions{
         &Body::head,
-        &tail,
+        &Body::tail,
     };
 };
