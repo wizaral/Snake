@@ -14,12 +14,12 @@ public:
     SwapBody(It first, It last)
         : Body(first, last) {}
 
+    Coordinate head() const override;
+    Coordinate tail() const override;
+
     void step() override;
     void grow() override;
     void ultimate() override;
-
-    Coordinate head() const;
-    Coordinate tail() const;
 
 protected:
     static Direction tail(const std::deque<Coordinate> &body);

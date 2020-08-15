@@ -8,6 +8,14 @@ const std::deque<Coordinate> &Body::body() const {
     return body_;
 }
 
+Coordinate Body::head() const {
+    return body_.front();
+}
+
+Coordinate Body::tail() const {
+    return body_.back();
+}
+
 void Body::step() {
     grow();
     body_.pop_back(); // no size check

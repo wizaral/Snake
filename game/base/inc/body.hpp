@@ -20,6 +20,9 @@ public:
     Direction direction() const;
     const std::deque<Coordinate> &body() const;
 
+    virtual Coordinate head() const;
+    virtual Coordinate tail() const;
+
     virtual void step();
     virtual void grow();
     virtual void turn(Direction direction);
