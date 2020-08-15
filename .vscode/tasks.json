@@ -71,7 +71,7 @@
                     "-Igame/base/inc",
                     "-Igame/extra_grow/inc",
                     "-Igame/swap_body/inc",
-                    "game/*.cpp",
+                    "game/main.cpp",
                     "game/base/src/*.cpp",
                     "game/extra_grow/src/*.cpp",
                     "game/swap_body/src/*.cpp"
@@ -95,7 +95,7 @@
                     "-I.\\game\\base\\inc",
                     "-I.\\game\\extra_grow\\inc",
                     "-I.\\game\\swap_body\\inc",
-                    ".\\game\\*.cpp",
+                    ".\\game\\main.cpp",
                     ".\\game\\base\\src\\*.cpp",
                     ".\\game\\extra_grow\\src\\*.cpp",
                     ".\\game\\swap_body\\src\\*.cpp"
@@ -142,7 +142,8 @@
                     "-Igame/base/inc",
                     "-Igame/extra_grow/inc",
                     "-Igame/swap_body/inc",
-                    "game/*.cpp",
+                    "game/main.cpp",
+                    "game/test.cpp",
                     "game/base/src/*.cpp",
                     "game/extra_grow/src/*.cpp",
                     "game/swap_body/src/*.cpp"
@@ -168,7 +169,8 @@
                     "-I.\\game\\base\\inc",
                     "-I.\\game\\extra_grow\\inc",
                     "-I.\\game\\swap_body\\inc",
-                    ".\\game\\*.cpp",
+                    ".\\game\\main.cpp",
+                    ".\\game\\test.cpp",
                     ".\\game\\base\\src\\*.cpp",
                     ".\\game\\extra_grow\\src\\*.cpp",
                     ".\\game\\swap_body\\src\\*.cpp"
