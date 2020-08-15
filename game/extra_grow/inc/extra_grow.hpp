@@ -2,7 +2,7 @@
 #include <functional>
 #include "body.hpp"
 
-class ExtraGrowBody : public Body {
+class ExtraGrowBody : virtual public Body {
 public:
     template <class It>
     ExtraGrowBody(It first, It last)

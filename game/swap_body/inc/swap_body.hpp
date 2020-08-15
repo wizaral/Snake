@@ -2,7 +2,7 @@
 #include <functional>
 #include "body.hpp"
 
-class SwapBody : public Body {
+class SwapBody : virtual public Body {
 protected:
     enum class HeadPosition {
         Head,
