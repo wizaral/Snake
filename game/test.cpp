@@ -96,6 +96,33 @@ void test_swap_direction() {
         body.ultimate();
         ASSERT_EQUAL(body.direction(), Direction::Down);
     }
+    {
+        std::deque<Coordinate> coords{
+            {0, -0},
+            {0, -1},
+            {1, -1},
+            {1, -2},
+            {2, -2},
+        };
+
+        SwapBody body(coords.begin(), coords.end());
+        ASSERT_EQUAL(body.direction(), Direction::Upward);
+        body.ultimate();
+        ASSERT_EQUAL(body.direction(), Direction::Right);
+    }
+    {
+        std::deque<Coordinate> coords{
+            {0, 0},
+            {0, 1},
+            {1, 1},
+            {1, 0},
+        };
+
+        SwapBody body(coords.begin(), coords.end());
+        ASSERT_EQUAL(body.direction(), Direction::Down);
+        body.ultimate();
+        ASSERT_EQUAL(body.direction(), Direction::Down);
+    }
 }
 
 void test_swap() {
