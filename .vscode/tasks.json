@@ -1,0 +1,194 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "test",
+            "type": "shell",
+            "osx": {
+                "command": "./debug",
+            },
+            "windows": {
+                "command": ".\\debug.exe",
+            },
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "echo": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "🏃‍♂️ run",
+            "type": "shell",
+            "osx": {
+                "command": "./build",
+            },
+            "windows": {
+                "command": ".\\build.exe",
+            },
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "echo": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "👨‍💻 compile",
+            "type": "shell",
+            "command": "g++",
+            "osx": {
+                "args": [
+                    "-pipe",
+                    "-std=c++17",
+                    "-Wall",
+                    "-Wextra",
+                    "-Werror",
+                    "-Wpedantic",
+                    "-Ofast",
+                    "-march=native",
+                    "-flto",
+                    "-fomit-frame-pointer",
+                    "-Idev_shugar",
+                    "-Igame/base/inc",
+                    "-Igame/double_grow/inc",
+                    "-Igame/swap_body/inc",
+                    "game/*.cpp",
+                    "game/base/src/*.cpp",
+                    "game/double_grow/src/*.cpp",
+                    "game/swap_body/src/*.cpp",
+                    "-o",
+                    "build"
+                ]
+            },
+            "windows": {
+                "args": [
+                    "-pipe",
+                    "-std=c++17",
+                    "-Wall",
+                    "-Wextra",
+                    "-Werror",
+                    "-Wpedantic",
+                    "-Ofast",
+                    "-march=native",
+                    "-flto",
+                    "-fomit-frame-pointer",
+                    "-I.\\dev_shugar",
+                    "-I.\\game\\base\\inc",
+                    "-I.\\game\\double_grow\\inc",
+                    "-I.\\game\\swap_body\\inc",
+                    ".\\game\\*.cpp",
+                    ".\\game\\base\\src\\*.cpp",
+                    ".\\game\\double_grow\\src\\*.cpp",
+                    ".\\game\\swap_body\\src\\*.cpp",
+                    "-o",
+                    "build.exe"
+                ],
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "focus": true,
+                "echo": false
+            }
+        },
+        {
+            "label": "🕵️‍♂️ debug",
+            "type": "shell",
+            "command": "g++",
+            "osx": {
+                "args": [
+                    "-pipe",
+                    "-std=c++17",
+                    "-Wall",
+                    "-Wextra",
+                    "-Werror",
+                    "-Wpedantic",
+                    "-g3",
+                    "-O0",
+                    "-ftrapv",
+                    "-fno-omit-frame-pointer",
+                    "-fsanitize=address,undefined",
+                    "-Idev_shugar",
+                    "-Igame/base/inc",
+                    "-Igame/double_grow/inc",
+                    "-Igame/swap_body/inc",
+                    "game/*.cpp",
+                    "game/base/src/*.cpp",
+                    "game/double_grow/src/*.cpp",
+                    "game/swap_body/src/*.cpp",
+                    "-o",
+                    "debug",
+                    "-D",
+                    "DEBUG"
+                ],
+            },
+            "windows": {
+                "args": [
+                    "-pipe",
+                    "-std=c++17",
+                    "-Wall",
+                    "-Wextra",
+                    "-Werror",
+                    "-Wpedantic",
+                    "-g3",
+                    "-O0",
+                    "-ftrapv",
+                    "-fno-omit-frame-pointer",
+                    "-I.\\dev_shugar",
+                    "-I.\\game\\base\\inc",
+                    "-I.\\game\\double_grow\\inc",
+                    "-I.\\game\\swap_body\\inc",
+                    ".\\game\\*.cpp",
+                    ".\\game\\base\\src\\*.cpp",
+                    ".\\game\\double_grow\\src\\*.cpp",
+                    ".\\game\\swap_body\\src\\*.cpp",
+                    "-o",
+                    "debug.exe",
+                    "-D",
+                    "DEBUG"
+                ],
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "focus": true,
+                "echo": false
+            }
+        }
+    ]
+}

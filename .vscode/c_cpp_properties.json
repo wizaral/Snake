@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "All",
+            "includePath": [
+                "${workspaceFolder}/dev_shugar",
+                "${workspaceFolder}/game/base/inc",
+                "${workspaceFolder}/game/double_grow/inc",
+                "${workspaceFolder}/game/swap_body/inc"
+            ]
+        }
+    ],
+    "version": 4
+}
