@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/dev_shugar",
                 "${workspaceFolder}/game/base/inc",
-                "${workspaceFolder}/game/double_grow/inc",
+                "${workspaceFolder}/game/extra_grow/inc",
                 "${workspaceFolder}/game/swap_body/inc"
             ]
         }

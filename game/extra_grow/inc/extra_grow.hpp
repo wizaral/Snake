@@ -2,11 +2,11 @@
 #include <functional>
 #include "body.hpp"
 
-class DoubleGrowBody : public Body {
+class ExtraGrowBody : public Body {
 public:
     template <class It>
-    DoubleGrowBody(It first, It last)
+    ExtraGrowBody(It first, It last)
         : Body(first, last) {}
 
-    void grow() override;
+    void ultimate() override;
 };
